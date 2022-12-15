@@ -6,7 +6,7 @@
     <body>
         <div id="maincontent">
             <div id="cover">
-                <img src="mlk.jpg" id="acover">
+                <img src="" alt="アルバム画像" id="acover">
             </div>
             <div id="titlebox">
                 <div id="mtitle">
@@ -28,19 +28,25 @@
     </body>
 
     <script>
+      
+      var img1 = document.querySelector('#acover');
+      var ida = location.search.substr(2);
           $.ajax({
          type: "POST",
-         url: "https://script.google.com/macros/s/AKfycbw-JKUhDAeyVHbX0w4t9TEEFsM7v9rTD5BX8WYqIY4kxi9v5_Q_VbvcsHGTJxTmdBjcEw/exec?p1=AXyomiy9",
-        dataType : "text"
+         url: "https://script.google.com/macros/s/AKfycbzrAJn2rYgycJ5MkLDo_66pVr2gOl5eEsYqBf1m2O4lNkLT4jg9Pcsa9_x96YG1Z-tt-Q/exec",
+        dataType : "text",
+            data:ida
        })
        .done(function(data){
         var dd = JSON.parse("[" + data + "]");
-        alert(data);
+            alert(dd);
+        img1.src=dd[1];
+            
        })
        .fail(function(XMLHttpRequest, textStatus, errorThrown){
           alert("読み込めませんでした",XMLHttpRequest, textStatus, errorThrown);
         });
-        var img1 = document.querySelector('#acover');
+      
         img1.crossOrigin = "";
         var ctx = null;
         img1.onload = function(){
