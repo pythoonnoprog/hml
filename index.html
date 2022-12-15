@@ -16,11 +16,11 @@
             <div id="distribox">
                 <div id="y1" class="flxy">
                     <div class="pbtn">再生</div>
-                    <div class="sservice"><img src="haruharumusic.png" class="sservicecover"></div>
+                    <div class="sservice"><img src="https://cdn.glitch.global/d57cd157-4c25-421e-9090-c85e3ba6bcab/haruharumusic.png?v=1671107723731" class="sservicecover"></div>
                 </div>
                 <div id="y2" class="flxy">
                     <div class="pbtn">再生</div>
-                    <div class="sservice"><img src="haruharumusic.png" class="sservicecover"></div><span class="gp">premium</span>
+                    <div class="sservice"><img src="https://cdn.glitch.global/d57cd157-4c25-421e-9090-c85e3ba6bcab/haruharumusic.png?v=1671107723731" class="sservicecover"></div><span class="gp">premium</span>
                 </div>
             </div>
             <span class="cpg">&copy; 2022 </span>
@@ -31,16 +31,16 @@
       
       var img1 = document.querySelector('#acover');
       var ida = location.search.substr(2);
+
           $.ajax({
          type: "POST",
          url: "https://script.google.com/macros/s/AKfycbzrAJn2rYgycJ5MkLDo_66pVr2gOl5eEsYqBf1m2O4lNkLT4jg9Pcsa9_x96YG1Z-tt-Q/exec",
-        dataType : "text",
-            data:ida
+            data:{"p1":ida}
        })
        .done(function(data){
-        var dd = JSON.parse("[" + data + "]");
+        var dd = JSON.parse(data);
             alert(dd);
-        img1.src=dd[1];
+        img1.src=dd[4];
             
        })
        .fail(function(XMLHttpRequest, textStatus, errorThrown){
