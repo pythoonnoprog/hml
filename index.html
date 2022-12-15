@@ -2,6 +2,13 @@
     <head>
         <meta name="viewport" content="width=device-width,initial-scale=1">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <meta property="og:type" content="music.song" />
+<meta property="og:description" content="各サービスでコンテンツを表示することがえ" />
+<meta property="og:title" content="各サービスでコンテンツを見る" />
+<meta property="og:url" content="hml.f5.si" />
+<meta property="og:image" content="hml.f5.si" />
+<meta property="og:site_name" content="hml.f5.si" />
+<meta property="og:locale" content="ja_JP" />
     </head>
     <body>
         <div id="maincontent">
@@ -46,20 +53,24 @@
         title1.innerHTML=dd[1];
         var title = dd[1];
         var url = location.href;
-        var image = 'https://cly7796.net/blog/sample/rewrite-ogp-with-javascript/03/img1.jpg';
+        var image = dd[4];
         document.title = title;
-        document.write('<meta property="og:type" content="article" />');
-        document.write('<meta property="og:description" content="「JavaScriptでOGPを書き換える」のデモページ3です。" />');
-        document.write('<meta property="og:title" content="' + title + '" />');
-        document.write('<meta property="og:url" content="' + url + '" />');
-        document.write('<meta property="og:image" content="' + image + '" />');
-        document.write('<meta property="og:site_name" content="cly7796.net" />');
-        document.write('<meta property="og:locale" content="ja_JP" />');
-        document.write('<meta name="twitter:card" content="summary" />');
-        document.write('<meta name="twitter:site" content="@cly7796net" />');
-        document.write('<meta name="twitter:description" content="「JavaScriptでOGPを書き換える」のデモページ3です。" />');
-        document.write('<meta name="twitter:title" content="' + dd[1] + '" />');
-        document.write('<meta name="twitter:image" content="' + dd[4] + '" />');
+        var headData = document.head.children;
+        for (var i = 0; i < headData.length; i++) {
+            var propertyVal = headData[i].getAttribute('property');
+            if(propertyVal !== null) {
+                if(propertyVal.indexOf('og:title') != -1) {
+                    headData[i].setAttribute('content', title);
+                }
+                if(propertyVal.indexOf('og:url') != -1) {
+                    headData[i].setAttribute('content', url);
+                }
+                if(propertyVal.indexOf('og:image') != -1) {
+                    headData[i].setAttribute('content', image);
+                }
+            }
+        }
+ 
        })
        .fail(function(XMLHttpRequest, textStatus, errorThrown){
           alert("読み込めませんでした",XMLHttpRequest, textStatus, errorThrown);
