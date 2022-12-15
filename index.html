@@ -10,7 +10,7 @@
             </div>
             <div id="titlebox">
                 <div id="mtitle">
-                 はるはるのテーマ
+                 タイトルを取得できませんでした
                 </div>
             </div>
             <div id="distribox">
@@ -28,7 +28,7 @@
     </body>
 
     <script>
-      
+      var title1 = document.querySelector('#mtitle');
       var img1 = document.querySelector('#acover');
       var ida = location.search.substr(2);
 
@@ -39,9 +39,8 @@
        })
        .done(function(data){
         var dd = JSON.parse(data);
-            alert(dd);
         img1.src=dd[4];
-            
+        title1.innerHTML=dd[1];
        })
        .fail(function(XMLHttpRequest, textStatus, errorThrown){
           alert("読み込めませんでした",XMLHttpRequest, textStatus, errorThrown);
