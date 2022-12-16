@@ -23,17 +23,7 @@
       <div id="titlebox">
         <div id="mtitle">タイトルを取得できませんでした</div>
       </div>
-      <div id="distribox">
-        <div id="y1" class="flxy">
-          <div class="pbtn">再生</div>
-          <div class="sservice">
-            <img
-              src="https://cdn.glitch.global/d57cd157-4c25-421e-9090-c85e3ba6bcab/haruharumusic.png?v=1671107723731"
-              class="sservicecover"
-            />
-          </div>
-        </div>
-      </div>
+      <div id="distribox"></div>
       <span class="cpg">&#8471;2022 </span>
     </div>
   </body>
@@ -64,15 +54,19 @@
           document.title = title;
           var fav = document.getElementById("fav");
           fav.href = dd[4];
-          if(dd[5] === ""){
+          if(dd[5] == "none"){}else{
             var y2 = document.createElement("div");
             y2.className="flxy";
-            document.getElementById("fav").appendChild(y2);
+            document.getElementById("distribox").appendChild(y2);
             var pb = document.createElement("div");
             pb.innerHTML="表示";
             pb.className="pbtn";
             y2.appendChild(pb);
-            alert(dd);
+            var spp = document.createElement("div");
+            spp.innerHTML="Webサイト";
+            spp.className="sservice";
+            y2.appendChild(spp);
+            pb.setAttribute("onclick","location.href='"+dd[5]+"';");
           }
           var headData = document.head.children;
           for (var i = 0; i < headData.length; i++) {
