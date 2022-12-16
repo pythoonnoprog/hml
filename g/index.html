@@ -15,19 +15,35 @@
   <topbar></topbar>
     <!--ページ内コンテンツ-->
     <div id="toppage" class="page">
-      <h1>
+      <div id="box1">
+            <h1>
         この機能はベータ版です
       </h1>
       <p>
         各サービスや個人のSNS、ホームページのリンクを付けられます
       </p>
+      </div>
+      <div id="box2">
+     <img src="https://cdn.glitch.global/d57cd157-4c25-421e-9090-c85e3ba6bcab/present1.jpg?v=1671188019799" class="p1">
+      </div>
     </div>
     <style>
-     #pointpage{
+      .p1{
+        width:40%;
+      }
+     #toppage{
       width:100%;
-      display:none;
+      display:flex;
+       
       height:calc(100% - 60px);
+       
      }
+      #box1{
+        width:50%;
+      }
+      #box2{
+        width:50%;
+      }
       .page{
         position:absolute;
         top:56px;
