@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href=" " id="fav" />
   </head>
   <body>
-    <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:;"></div>
+    <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:#fff;z-index:100;" id="lod"></div>
     <div id="maincontent">
       <div id="cover">
         <img src=" " alt="アルバム画像" id="acover" />
@@ -42,6 +42,7 @@
   </body>
   <script>
     var title1 = document.querySelector("#mtitle");
+    var lod = document.querySelector("#lod");
     var img1 = document.querySelector("#acover");
     var ida = location.search.substr(2);
     if (ida == "") {
@@ -66,6 +67,9 @@
           document.title = title;
           var fav = document.getElementById("fav");
           fav.href = dd[4];
+          if(dd[6] =! ""){
+            var y2  -document.createElement("div");
+          }
           var headData = document.head.children;
           for (var i = 0; i < headData.length; i++) {
             var propertyVal = headData[i].getAttribute("property");
@@ -89,6 +93,7 @@
     img1.crossOrigin = "";
     var ctx = null;
     img1.onload = function () {
+      lod.style.display="none";
       var canvas = document.createElement("canvas");
       ctx = canvas.getContext("2d");
       ctx.drawImage(img1, 0, 0, img1.width, img1.height);
