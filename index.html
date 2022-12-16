@@ -1,176 +1,184 @@
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-     <meta property="og:type" content="music.song" />
-<meta property="og:description" content="各サービスでコンテンツを表示することが出来ます" />
-<meta property="og:title" content="SNS向けOGPは開発中です" />
-<meta property="og:url" content="hml.f5.si" />
-<meta property="og:image" content="hml.f5.si" />
-<meta property="og:site_name" content="hml.f5.si" />
-<meta property="og:locale" content="ja_JP" />
-    <link rel="shortcut icon" href=" " id="fav">
-
-
-    </head>
-    <body>
-        <div id="maincontent">
-            <div id="cover">
-                <img src=" " alt="アルバム画像" id="acover">
-            </div>
-            <div id="titlebox">
-                <div id="mtitle">
-                 タイトルを取得できませんでした
-                </div>
-            </div>
-            <div id="distribox">
-                <div id="y1" class="flxy">
-                    <div class="pbtn">再生</div>
-                    <div class="sservice"><img src="https://cdn.glitch.global/d57cd157-4c25-421e-9090-c85e3ba6bcab/haruharumusic.png?v=1671107723731" class="sservicecover"></div>
-                </div>
-                <div id="y2" class="flxy">
-                  <!--<span class="gp">premium</span>-->
-                </div>
-            </div>
-            <span class="cpg">&#8471; 2022 </span>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta property="og:type" content="music.song" />
+    <meta
+      property="og:description"
+      content="各サービスでコンテンツを表示することが出来ます"
+    />
+    <meta property="og:title" content="SNS向けOGPは開発中です" />
+    <meta property="og:url" content="hml.f5.si" />
+    <meta property="og:image" content="hml.f5.si" />
+    <meta property="og:site_name" content="hml.f5.si" />
+    <meta property="og:locale" content="ja_JP" />
+    <link rel="shortcut icon" href=" " id="fav" />
+  </head>
+  <body>
+    <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:;"></div>
+    <div id="maincontent">
+      <div id="cover">
+        <img src=" " alt="アルバム画像" id="acover" />
+      </div>
+      <div id="titlebox">
+        <div id="mtitle">タイトルを取得できませんでした</div>
+      </div>
+      <div id="distribox">
+        <div id="y1" class="flxy">
+          <div class="pbtn">再生</div>
+          <div class="sservice">
+            <img
+              src="https://cdn.glitch.global/d57cd157-4c25-421e-9090-c85e3ba6bcab/haruharumusic.png?v=1671107723731"
+              class="sservicecover"
+            />
+          </div>
         </div>
-    </body>
-      <script>
-    
-      
-      
-      var title1 = document.querySelector('#mtitle');
-      var img1 = document.querySelector('#acover');
-      var ida = location.search.substr(2);
-        if (ida==""){
-          location.href="/g";
-        }else{
-          
-        }
-       $.ajax({
-         type: "POST",
-         url: "https://script.google.com/macros/s/AKfycbzrAJn2rYgycJ5MkLDo_66pVr2gOl5eEsYqBf1m2O4lNkLT4jg9Pcsa9_x96YG1Z-tt-Q/exec",
-            data:{"p1":ida}
-       })
-       .done(function(data){
+        <div id="y2" class="flxy">
+          <!--<span class="gp">premium</span>-->
+        </div>
+      </div>
+      <span class="cpg">&#8471; 2022 </span>
+    </div>
+  </body>
+  <script>
+    var title1 = document.querySelector("#mtitle");
+    var img1 = document.querySelector("#acover");
+    var ida = location.search.substr(2);
+    if (ida == "") {
+      location.href = "/g";
+    } else {
+    }
+    $.ajax({
+      type: "POST",
+      url: "https://script.google.com/macros/s/AKfycbzrAJn2rYgycJ5MkLDo_66pVr2gOl5eEsYqBf1m2O4lNkLT4jg9Pcsa9_x96YG1Z-tt-Q/exec",
+      data: { p1: ida },
+    })
+      .done(function (data) {
         var dd = JSON.parse(data);
-         if(dd[1]=="MNAME(あいう)"){
-           location.html="404";
-         }else{
-        img1.src=dd[4];
-        title1.innerHTML=dd[1];
-        var title = dd[1];
-        var url = location.href;
-        var image = dd[4];
-        document.title = title;
-        var fav = document.getElementById("fav");
-        fav.href = dd[4];
-        var headData = document.head.children;
-        for (var i = 0; i < headData.length; i++) {
-            var propertyVal = headData[i].getAttribute('property');
-            if(propertyVal !== null) {
-                if(propertyVal.indexOf('og:title') != -1) {
-                    headData[i].setAttribute('content', title);
-                }
-                if(propertyVal.indexOf('og:url') != -1) {
-                    headData[i].setAttribute('content', url);
-                }
-                if(propertyVal.indexOf('og:image') != -1) {
-                    headData[i].setAttribute('content', image);
-                }
+        if (dd[1] == "MNAME(あいう)") {
+          location.href = "404";
+        } else {
+          img1.src = dd[4];
+          title1.innerHTML = dd[1];
+          var title = dd[1];
+          var url = location.href;
+          var image = dd[4];
+          document.title = title;
+          var fav = document.getElementById("fav");
+          fav.href = dd[4];
+          var headData = document.head.children;
+          for (var i = 0; i < headData.length; i++) {
+            var propertyVal = headData[i].getAttribute("property");
+            if (propertyVal !== null) {
+              if (propertyVal.indexOf("og:title") != -1) {
+                headData[i].setAttribute("content", title);
+              }
+              if (propertyVal.indexOf("og:url") != -1) {
+                headData[i].setAttribute("content", url);
+              }
+              if (propertyVal.indexOf("og:image") != -1) {
+                headData[i].setAttribute("content", image);
+              }
             }
+          }
         }
-         }
- 
-       })
-       .fail(function(XMLHttpRequest, textStatus, errorThrown){
-          alert("読み込めませんでした",XMLHttpRequest, textStatus, errorThrown);
-        });
-        img1.crossOrigin = "";
-        var ctx = null;
-        img1.onload = function(){
-        var canvas = document.createElement('canvas');
-        ctx = canvas.getContext('2d');
-        ctx.drawImage(img1,0,0,img1.width, img1.height);
-        var rrgb = ctx.getImageData(80,80,1,1).data;
-        var rgb = "rgb("+parseInt(rrgb[0] - 0)+","+parseInt(rrgb[1] - 0)+","+parseInt(rrgb[2] - 20)+")";
-        document.body.style.backgroundColor=rgb;
-        console.log(rgb);
-        }
-    </script>
-    <style>
-      
-        body{
-           width:100%;
-           height:100%;
-           background-color: slategrey;
-           margin:0px;
-        }
-        #cover{
-            width:100%;
-        }
-        #acover{
-            width:100%;
-            border-radius: 8px;
-        }.cpg{
-            display: block;
-            background-color: azure;
-            text-align:left;
-        }
-        #titlebox{
-            padding: 20 20 20 20;
-            background-color: darksalmon;
-        }
-        #distribox{
-            background-color: aliceblue;
-        }
-        #maincontent{
-            margin-top: 10px;
-            width:28%;
-            border-radius: 10px;
-            text-align: center;
-            position: absolute;
-            top:0;left:50%;
-            transform:translateX(-50%);
-        }
-        @media screen and (max-width: 800px) {
-            #maincontent{
-                width:95%;
-            }
-            #acover{
-                border-radius: 5px;
-            }
-        }
-        .gp{
-            display:block;
-            height:19px;
-            background: navajowhite;
-            color: #fff;
-            padding:2px;
-            margin: 10px;
-            font-size: 10px;
-            font-weight: bold;
-            border-radius: 10px;
-            cursor: alias;
-        }
-        .flxy{
-            display: flex;
-            border-bottom:1px solid navajowhite;
-        }
-        .pbtn{
-            background-color: #fff;
-            text-align: center;
-            padding: 15px 18px 15px 18px;
-            border-right:solid 2px;
-            border-image: conic-gradient(cyan,black) 1;
-            cursor: pointer;
-        }
-        .sservice{
-            text-align: center;
-            margin-left:5px;
-        }
-        .sservicecover{
-            width:100px;
-        }
-    </style>
+      })
+      .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+        alert("読み込めませんでした", XMLHttpRequest, textStatus, errorThrown);
+      });
+    img1.crossOrigin = "";
+    var ctx = null;
+    img1.onload = function () {
+      var canvas = document.createElement("canvas");
+      ctx = canvas.getContext("2d");
+      ctx.drawImage(img1, 0, 0, img1.width, img1.height);
+      var rrgb = ctx.getImageData(80, 80, 1, 1).data;
+      var rgb =
+        "rgb(" +
+        parseInt(rrgb[0] - 0) +
+        "," +
+        parseInt(rrgb[1] - 0) +
+        "," +
+        parseInt(rrgb[2] - 20) +
+        ")";
+      document.body.style.backgroundColor = rgb;
+      console.log(rgb);
+    };
+  </script>
+  <style>
+    body {
+      width: 100%;
+      height: 100%;
+      background-color: slategrey;
+      margin: 0px;
+    }
+    #cover {
+      width: 100%;
+    }
+    #acover {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .cpg {
+      display: block;
+      background-color: azure;
+      text-align: left;
+    }
+    #titlebox {
+      padding: 20 20 20 20;
+      background-color: darksalmon;
+    }
+    #distribox {
+      background-color: aliceblue;
+    }
+    #maincontent {
+      margin-top: 10px;
+      width: 28%;
+      border-radius: 10px;
+      text-align: center;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    @media screen and (max-width: 800px) {
+      #maincontent {
+        width: 95%;
+      }
+      #acover {
+        border-radius: 5px;
+      }
+    }
+    .gp {
+      display: block;
+      height: 19px;
+      background: navajowhite;
+      color: #fff;
+      padding: 2px;
+      margin: 10px;
+      font-size: 10px;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: alias;
+    }
+    .flxy {
+      display: flex;
+      border-bottom: 1px solid navajowhite;
+    }
+    .pbtn {
+      background-color: #fff;
+      text-align: center;
+      padding: 15px 18px 15px 18px;
+      border-right: solid 2px;
+      border-image: conic-gradient(cyan, black) 1;
+      cursor: pointer;
+    }
+    .sservice {
+      text-align: center;
+      margin-left: 5px;
+    }
+    .sservicecover {
+      width: 100px;
+    }
+  </style>
 </html>
