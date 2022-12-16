@@ -9,14 +9,14 @@
 <meta property="og:image" content="hml.f5.si" />
 <meta property="og:site_name" content="hml.f5.si" />
 <meta property="og:locale" content="ja_JP" />
-    
+    <link rel="shortcut icon" href=" " id="fav">
 
 
     </head>
     <body>
         <div id="maincontent">
             <div id="cover">
-                <img src="" alt="アルバム画像" id="acover">
+                <img src=" " alt="アルバム画像" id="acover">
             </div>
             <div id="titlebox">
                 <div id="mtitle">
@@ -57,6 +57,8 @@
         var url = location.href;
         var image = dd[4];
         document.title = title;
+        var fav = document.getElementById("fav");
+        fav.href = dd[4];
         var headData = document.head.children;
         for (var i = 0; i < headData.length; i++) {
             var propertyVal = headData[i].getAttribute('property');
