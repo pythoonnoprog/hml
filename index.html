@@ -47,13 +47,16 @@
         }else{
           
         }
-          $.ajax({
+       $.ajax({
          type: "POST",
          url: "https://script.google.com/macros/s/AKfycbzrAJn2rYgycJ5MkLDo_66pVr2gOl5eEsYqBf1m2O4lNkLT4jg9Pcsa9_x96YG1Z-tt-Q/exec",
             data:{"p1":ida}
        })
        .done(function(data){
         var dd = JSON.parse(data);
+         if(dd[1]=="MNAME(あいう)"){
+           
+         }else{
         img1.src=dd[4];
         title1.innerHTML=dd[1];
         var title = dd[1];
@@ -77,12 +80,12 @@
                 }
             }
         }
+         }
  
        })
        .fail(function(XMLHttpRequest, textStatus, errorThrown){
           alert("読み込めませんでした",XMLHttpRequest, textStatus, errorThrown);
         });
-
         img1.crossOrigin = "";
         var ctx = null;
         img1.onload = function(){
