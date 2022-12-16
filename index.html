@@ -70,6 +70,22 @@
             spp.innerHTML="Webサイト";
             spp.className="gp";
           }
+          if(dd[6] == "none"){}else{
+            var y3 = document.createElement("div");
+            y3.className="flxy";
+            document.getElementById("distribox").appendChild(y3);
+            var pb = document.createElement("div");
+            pb.innerHTML="表示";
+            pb.className="pbtn";
+            y2.appendChild(pb);
+            var spp = document.createElement("div");
+            spp.className="sservice";
+            y2.appendChild(spp);
+            pb.setAttribute("onclick","location.href='"+dd[5]+"';");
+            var exp = document.createElement("div");
+            spp.innerHTML="Webサイト";
+            spp.className="gp";
+          }
           var headData = document.head.children;
           for (var i = 0; i < headData.length; i++) {
             var propertyVal = headData[i].getAttribute("property");
