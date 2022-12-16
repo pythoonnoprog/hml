@@ -7,11 +7,16 @@
 </button>
 <script>
 function janken(f){
-  var p1 = Math.floor( Math.random () * 2) + 1;
+  var p1 = Math.floor( Math.random () * 1.5) + 1;
   console.log(p1);
   var p2 = ["グー","チョキ","パー"]
   alert("私は"+p2[p1]+"を出しました！");
-  if(p2[p1])
-  
+  if(p2[p1]=="グー"&&f=="ch"){
+     alert("やったー私の勝ちです！");
+  }else if(p2[p1]=="パー"&&f=="go"){
+     alert("まあまあ、一応私の勝ちですよ");
+  }else if(p2[p1]=="チョキ"&&f=="pa"){
+     alert("こういったら失礼だけど楽勝っすねw");
+  }
 }
 </script>
