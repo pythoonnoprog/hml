@@ -48,7 +48,7 @@
     }
     $.ajax({
       type: "POST",
-      url: "https://script.google.com/macros/s/AKfycbzrAJn2rYgycJ5MkLDo_66pVr2gOl5eEsYqBf1m2O4lNkLT4jg9Pcsa9_x96YG1Z-tt-Q/exec",
+      url: "https://script.google.com/macros/s/AKfycbwU6XRr0vOLD68HkQugnJb6F5UMJwGIVC37jwqXi-neozdpGYQrA0eiij27gjjaE8gH-w/exec",
       data: { p1: ida },
     })
       .done(function (data) {
@@ -64,7 +64,7 @@
           document.title = title;
           var fav = document.getElementById("fav");
           fav.href = dd[4];
-          if(dd[6] =! ""){
+          if(dd[5] === ""){
             var y2 = document.createElement("div");
             y2.className="flxy";
             document.getElementById("fav").appendChild(y2);
@@ -72,6 +72,7 @@
             pb.innerHTML="表示";
             pb.className="pbtn";
             y2.appendChild(pb);
+            alert(dd);
           }
           var headData = document.head.children;
           for (var i = 0; i < headData.length; i++) {
