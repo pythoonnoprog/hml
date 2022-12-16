@@ -2,7 +2,7 @@
 <html>
   <head>
     <!--メタ情報　及び　外部スクリプト読み込み-->
-    <!--(c) 2022 はるはる2713-->
+    <!--(c) 2022 はるはる-->
     <meta charset="utf-8" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
@@ -15,152 +15,26 @@
   <topbar></topbar>
     <!--ページ内コンテンツ-->
     <div id="toppage" class="page">
-  
-      </div>
-     <div id="addpage" class="page">
-     <vn>
-     <h2>今日の結果を入力</h2>
-      <p>Q1.横断歩道はしっかり一時停止しましたか？</p>
-       <label for="c1">はい</label><input type="checkbox" value="6" id="c1" />
-      <p>Q2.車道は右側を走行しましたか？</p>
-       <label for="c2">はい</label><input type="checkbox" value="6" id="c2" />
-      <p>Q3.夜間はライトをつけていますか？またはつくことを確認していますか？</p>
-      <label for="c3">はい</label><input type="checkbox" value="4" id="c3" />
-      <p>Q4.歩行者を優先できましたか？</p>
-      <label for="c4">はい</label><input type="checkbox" value="4" id="c4" />
-       </vn>
-       <pointcalc onclick="pcalc()"></pointcalc><close onclick="aclos()"></close>
-     </div>
+      <h1>
+        この機能はベータ版です
+      </h1>
+      <p>
+        各サービスや個人のSNS、ホームページのリンクを付けられます
+      </p>
+    </div>
     <style>
-     #tokuten{
-       text-align:center;
-       font-size:2em;
-     }
      #pointpage{
       width:100%;
       display:none;
       height:calc(100% - 60px);
      }
-     #addpage{
-      width:100%;
-      display:none;
-      height:calc(100% - 60px);
-     }
-     #studentid{
-       margin-top:15vh;
-       width:120px;
-       padding:15 10 15 10;
-       border-radius:20px;
-       outline:none;
-       font-size:2em;
-       border:none;
-       border:1px solid gray;
-      }
-      #studentid:focus{
-       border:1px solid orange;
-      }
-      #setpage{
-        height:calc(100% - 60px);
-        display:none;
-        width:100%;
-        text-align:center;
-      }
-      #score-board{
-         text-align:left;
-         margin-left:20px;
-      }
-      aap{
-        margin-left:10px;
-      }
-      pbx{
-       border:0.2px solid;
-       padding:5 15 5 15;
-       border-radius:5px;
-      }
-      input[type="checkbox"]{
-       text-align:center;
-      }
-      pbx:after{
-       content:"P";
-       font-size:0.5px;
-      }
-      hw{
-       display:inline-block;
-       margin-top:5vw;
-       background-color:#CCE7D3;
-       padding:20 0 20 0;
-       border-radius:10px;
-       width: calc(100% - 30px);
-      }
-      today1:after{
-       color:#fff;
-       font-weight:bold;
-       display:inline-block;
-       content:"今日の結果を入力";
-       padding:20 0 20 0;
-       background-color:#21A0DB;
-       text-align:center;
-       width: calc(100% - 30px);
-       border-radius:20px;
-      }
-       close:after{
-       color:#fff;
-       font-weight:bold;
-       position:absolute;
-       bottom:80px;
-       left:15px;
-       content:"キャンセル";
-       padding:15 0 15 0;
-       background-color:gray;
-       text-align:center;
-       width: calc(100% - 30px);
-       border-radius:20px;
-      }
-      addbutton:after{
-       color:#fff;
-       font-weight:bold;
-       position:absolute;
-       bottom:20px;
-       left:15px;
-       content:"登録";
-       padding:15 0 15 0;
-       background-color:#21A0DB;
-       text-align:center;
-       width: calc(100% - 30px);
-       border-radius:20px;
-      }
-      psave:after{
-       color:#fff;
-       font-weight:bold;
-       position:absolute;
-       bottom:20px;
-       left:15px;
-       content:"保存して閉じる";
-       padding:15 0 15 0;
-       background-color:#21A0DB;
-       text-align:center;
-       width: calc(100% - 30px);
-       border-radius:20px;
-      }
-      vn{
-       display:block;
-       margin-left:10px;
-       margin-top:10px;
-      }
-      #toppage{
-      width:100%;
-      }
-      a{
-       text-decoration:none;
-       margin-left:5px;
-      }
       .page{
         position:absolute;
         top:56px;
         left:0px;
       }
       topbar:after{
-        content:"減・交通事故キャンペーン🚲";
+        content:"リンクをまとめるもの";
       }
       topbar {
         display: block;
