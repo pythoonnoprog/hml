@@ -33,11 +33,8 @@
             />
           </div>
         </div>
-        <div id="y2" class="flxy">
-          <!--<span class="gp">premium</span>-->
-        </div>
       </div>
-      <span class="cpg">&#8471; 2022 </span>
+      <span class="cpg">&#8471;2022 </span>
     </div>
   </body>
   <script>
@@ -68,7 +65,13 @@
           var fav = document.getElementById("fav");
           fav.href = dd[4];
           if(dd[6] =! ""){
-            var y2  -document.createElement("div");
+            var y2 = document.createElement("div");
+            y2.className="flxy";
+            document.getElementById("fav").appendChild(y2);
+            var pb = document.createElement("div");
+            pb.innerHTML="表示";
+            pb.className="pbtn";
+            y2.appendChild(pb);
           }
           var headData = document.head.children;
           for (var i = 0; i < headData.length; i++) {
