@@ -42,7 +42,11 @@
       var title1 = document.querySelector('#mtitle');
       var img1 = document.querySelector('#acover');
       var ida = location.search.substr(2);
-
+        if (ida==""){
+          location.href="/g";
+        }else{
+          
+        }
           $.ajax({
          type: "POST",
          url: "https://script.google.com/macros/s/AKfycbzrAJn2rYgycJ5MkLDo_66pVr2gOl5eEsYqBf1m2O4lNkLT4jg9Pcsa9_x96YG1Z-tt-Q/exec",
