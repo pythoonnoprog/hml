@@ -1,10 +1,17 @@
 <p>せっかくなのでじゃんけんしましょう</p>
-<button>
-  グー
+<button onclick="janken('go')">グー
 </button>
-<button>
-　チョキ
+<button onclick="janken('ch')">チョキ
 </button>
-<button>
-  パー
+<button onclick="janken('pa')">パー
 </button>
+<script>
+function janken(f){
+  var p1 = Math.floor( Math.random () * 2) + 1;
+  console.log(p1);
+  var p2 = ["グー","チョキ","パー"]
+  alert("私は"+p2[p1]+"を出しました！");
+  if(p2[p1])
+  
+}
+</script>
