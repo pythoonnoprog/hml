@@ -50,9 +50,9 @@
         if (dd[1] == "MNAME(あいう)") {
           location.href = "404";
         } else {
-          var etemp = years2;
-          console.log(etemp);
-          cpg.innerHTML="&#8471"+etemp[4]+dd[5];
+          var er = dd[2].substr(10,5);
+          console.log(er);
+          cpg.innerHTML="&#8471"+er+" "+dd[5];
           img1.src = dd[4];
           title1.innerHTML = dd[1];
           var title = dd[1];
@@ -154,6 +154,7 @@
       display: block;
       background-color: azure;
       text-align: left;
+      padding:4px;
     }
     #titlebox {
       padding: 20 20 20 20;
