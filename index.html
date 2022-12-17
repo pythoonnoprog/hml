@@ -39,11 +39,12 @@
     }
     $.ajax({
       type: "POST",
-      url: "https://script.google.com/macros/s/AKfycbwU6XRr0vOLD68HkQugnJb6F5UMJwGIVC37jwqXi-neozdpGYQrA0eiij27gjjaE8gH-w/exec",
+      url: "https://script.google.com/macros/s/AKfycbzKO3RzIpPyGWdkPwJujDO-aF3AuH0q6NxRo_kqLVmRssRAgYNCvS28oWxtMlJ2NpNWLw/exec",
       data: { p1: ida },
     })
       .done(function (data) {
         var dd = JSON.parse(data);
+      console.log(dd);
         if (dd[1] == "MNAME(あいう)") {
           location.href = "404";
         } else {
@@ -55,7 +56,7 @@
           document.title = title;
           var fav = document.getElementById("fav");
           fav.href = dd[4];
-          if(dd[5] == "none"){}else{
+          if(dd[6] == "none"){}else{
             var y2 = document.createElement("div");
             y2.className="flxy";
             document.getElementById("distribox").appendChild(y2);
@@ -66,12 +67,12 @@
             var spp = document.createElement("div");
             spp.className="sservice";
             y2.appendChild(spp);
-            pb.setAttribute("onclick","location.href='"+dd[5]+"';");
+            pb.setAttribute("onclick","location.href='"+dd[6]+"';");
             var exp = document.createElement("div");
             spp.innerHTML="Webサイト";
             spp.className="gp";
           }
-          if(dd[6] == "none"){}else{
+          if(dd[7] == "none"){}else{
             var y3 = document.createElement("div");
             y3.className="flxy";
             document.getElementById("distribox").appendChild(y3);
@@ -82,7 +83,7 @@
             var spp = document.createElement("div");
             spp.className="sservice";
             y3.appendChild(spp);
-            pb.setAttribute("onclick","location.href='"+dd[6]+"';");
+            pb.setAttribute("onclick","location.href='"+dd[7]+"';");
             var exp = document.createElement("img");
             exp.src = "https://cdn.glitch.global/d57cd157-4c25-421e-9090-c85e3ba6bcab/yt_logo_rgb_light.png?v=1671233609138";
             exp.className="sservicecover";
