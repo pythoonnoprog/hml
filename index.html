@@ -25,13 +25,14 @@
         <div id="mtitle">タイトルを取得できませんでした</div>
       </div>
       <div id="distribox"></div>
-      <span class="cpg">&#8471;2022 </span>
+      <span class="cpg" id="cpg">&#8471;2022 </span>
     </div>
   </body>
   <script>
     var title1 = document.querySelector("#mtitle");
     var lod = document.querySelector("#lod");
     var img1 = document.querySelector("#acover");
+    var cpg = document.querySelector("#cpg");
     var ida = location.search.substr(2);
     if (ida == "") {
       location.href = "/g";
@@ -44,10 +45,14 @@
     })
       .done(function (data) {
         var dd = JSON.parse(data);
+      
       console.log(dd);
         if (dd[1] == "MNAME(あいう)") {
           location.href = "404";
         } else {
+          var years = dd[2].split("　");
+          console.log(years);
+          cpg.innerHTML="&#8471"+years[3]+dd[5];
           img1.src = dd[4];
           title1.innerHTML = dd[1];
           var title = dd[1];
