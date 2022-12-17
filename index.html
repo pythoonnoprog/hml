@@ -94,6 +94,23 @@
             exp.className="sservicecover";
             spp.appendChild(exp);
           }
+            if(dd[8] == "none"){}else{
+            var y4 = document.createElement("div");
+            y4.className="flxy";
+            document.getElementById("distribox").appendChild(y4);
+            var pb = document.createElement("div");
+            pb.innerHTML="再生";
+            pb.className="pbtn";
+            y4.appendChild(pb);
+            var spp = document.createElement("div");
+            spp.className="sservice";
+            y4.appendChild(spp);
+            pb.setAttribute("onclick","location.href='https://haruharumusic.netlify.app/?/"+dd[8]+"';");
+            var exp = document.createElement("img");
+            exp.src = "https://cdn.glitch.global/d57cd157-4c25-421e-9090-c85e3ba6bcab/haruharumusic.png?v=1671239162169";
+            exp.className="sservicecoverh";
+            spp.appendChild(exp);
+          }
           var headData = document.head.children;
           for (var i = 0; i < headData.length; i++) {
             var propertyVal = headData[i].getAttribute("property");
@@ -212,6 +229,10 @@
     .sservicecover { 
       width: 100px;
       margin-top: 15px;
+    }
+    .sservicecoverh { 
+      width: 100px;
+      margin-top: 0px;
     }
   </style>
 </html>
