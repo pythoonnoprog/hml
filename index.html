@@ -50,9 +50,10 @@
         if (dd[1] == "MNAME(あいう)") {
           location.href = "404";
         } else {
-          var years = dd[2].split("　");
-          console.log(years);
-          cpg.innerHTML="&#8471"+years[3]+dd[5];
+          var years = dd[2];
+          var years2 = years.replaceAll(/ /g, "','");
+          console.log(years2
+          cpg.innerHTML="&#8471"+years2[3]+dd[5];
           img1.src = dd[4];
           title1.innerHTML = dd[1];
           var title = dd[1];
