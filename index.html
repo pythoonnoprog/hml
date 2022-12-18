@@ -163,16 +163,21 @@
     
   </script>
   <style>
-    .pcv:hover + .pct{
-      left:50px;
-      width:0;
+    .pcvicon:hover + .pct{
+      left:5px;
+      visibility:visible;
     }
     .pct{
+      top:-5px;
       position:relative;
-      left:-50px;
+      left:-px;
       display:inline-block;
-      width:0px;
-      animation-duration:1s;
+      -moz-transition: 1s ease; 
+      -webkit-transition: 1s ease; 
+      transition: 0.8s ease;
+      visibility:hidden;
+      z-index:1;
+      
     }
     .pcv{
       display:inline-block;
@@ -182,7 +187,9 @@
       color:#66ff66;
     }
     .pcvicon{
+      position:relative;
       display:inline-block;
+      z-index:1000;
       width:20px;
     }
     body {
