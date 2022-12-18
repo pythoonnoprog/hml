@@ -30,9 +30,9 @@
       <span class="btm" id="btm">
         <div style="display:flex;">
          <a href="https://telegra.ph/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BCNotice---hmlf5si-%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6-12-18" class="pcv"><img src="https://cdn.glitch.global/d57cd157-4c25-421e-9090-c85e3ba6bcab/%E3%82%AB%E3%82%AE%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3.png?v=1671363039602" class="pcvicon">
-           <span class="pct">
+           <div class="pct">
            Privacy
-           </span></a>
+           </div></a>
         </div>
       </span>
     </div>
@@ -163,20 +163,16 @@
     
   </script>
   <style>
-    @keyframes slideIn {
-  0% {
-    transform: translateX(180px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-　　　}
     .pcv:hover + .pct{
-      display:block;
-      animation: slideIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+      left:50px;
+      width:0;
     }
     .pct{
-      display:none;
+      position:relative;
+      left:-50px;
+      display:inline-block;
+      width:0px;
+      animation-duration:1s;
     }
     .pcv{
       display:inline-block;
