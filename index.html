@@ -84,7 +84,7 @@
             pb.setAttribute("onclick","location.href='"+dd[6]+"';");
             var exp = document.createElement("div");
             spp.innerHTML="Webサイト";
-            spp.className="gp";
+            spp.className="ws";
           }
           if(dd[7] == "none"){}else{
             var y3 = document.createElement("div");
@@ -166,6 +166,18 @@
     .pcvicon:hover + .pct{
       left:0px;
       visibility:visible;
+    }
+    .ws{
+      margin-left:10px;
+      margin-top:15px;
+    }
+    .ws:after{
+      content:"i";
+      color:#fff;
+      font-size:20px;
+      background:gray;
+      padding:0px 10 0 10;
+      border-radius:50%;
     }
     .pct{
       top:-5px;
