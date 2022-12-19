@@ -85,7 +85,7 @@
             var exp = document.createElement("div");
             spp.innerHTML="Webサイト";
             spp.className="ws";
-            var infom2 = document.createElement("i");
+            var infom2 = document.createElement("span");
             infom2.innerHTML="i";
             infom2.className="infoi";
             spp.appendChild(infom2);
@@ -176,14 +176,15 @@
       visibility:visible;
     }
     .ws{
-      margin-left:10px;
+      margin-left:12px;
       margin-top:15px;
+      font-weight:bold;
     }
     .infoi{
       color:#fff;
       font-size:10px;
       background:gray;
-      padding:0px 6 0 6;
+      padding:1 6 1 6;
       border-radius:50%;
       margin-left:6px;
     }
@@ -192,10 +193,10 @@
     }
     .ovl1{
       position:absolute;
-      top:0;
+      top:40%;
       left:0;
       background:#fff;
-      height:50%;
+      border-radius:10px;
       width:100%;
       display:none;
       
