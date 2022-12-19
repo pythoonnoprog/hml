@@ -18,9 +18,13 @@
   </head>
   <body>
     <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:#fff;z-index:100;" id="lod"></div>
+    <div class="ovl1">
+    　このWebサイトへのリンクは、作成者によって設定されたものです。
+    </div>
     <div id="maincontent">
       <div id="cover">
         <img src=" " alt="アルバム画像" id="acover" />
+        
       </div>
       <div id="titlebox">
         <div id="mtitle">タイトルを取得できませんでした</div>
@@ -174,10 +178,18 @@
     .ws:after{
       content:"i";
       color:#fff;
-      font-size:20px;
+      font-size:10px;
       background:gray;
-      padding:0px 10 0 10;
+      padding:0px 5 0 5;
       border-radius:50%;
+      margin-left:6px;
+    }
+    .ws:hover + .explain{
+      left:0px;
+      visibility:visible;
+      position:relative;
+      background:#000;
+      opacity:0.8;
     }
     .pct{
       top:-5px;
@@ -189,7 +201,6 @@
       transition: 0.8s ease;
       visibility:hidden;
       z-index:1;
-      
     }
     .pcv{
       display:inline-block;
