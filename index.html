@@ -18,16 +18,12 @@
   </head>
   <body>
     <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:#fff;z-index:100;" id="lod"></div>
-    <div class="ovl">
-    　このWebサイトへのリンクは、作成者によって設定されたものです。
-    </div>
     <div id="maincontent">
       <div id="cover">
-        <img src=" " alt="アルバム画像" id="acover" />
-        
+        <img src=" " alt="アルバム画像" id="acover" />  
       </div>
       <div id="titlebox">
-        <div id="mtitle">タイトルを取得できませんでした</div>
+        <div id="mtitle"></div>
       </div>
       <div id="distribox"></div>
       <span class="cpg" id="cpg"></span>
@@ -185,11 +181,12 @@
       margin-left:6px;
     }
     .ovl1{
-      position:1
-      visibility:hidden;
+      display:none;
+      background:#fff;
+      z-index:20;
     }
     .ws:hover + .ovl1{
-     visibility:visible;
+     display:block;
     }
     .pct{
       top:-5px;
