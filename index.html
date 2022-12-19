@@ -85,6 +85,10 @@
             var exp = document.createElement("div");
             spp.innerHTML="Webサイト";
             spp.className="ws";
+            var infom2 = document.createElement("i");
+            infom2.innerHTML="i";
+            infom2.className="infoi";
+            spp.appendChild(infom2);
             var infom1 = document.createElement("div");
             infom1.innerHTML="このリンクは所有者が設定したものです。<br>";
             infom1.className="ovl1";
@@ -175,8 +179,7 @@
       margin-left:10px;
       margin-top:15px;
     }
-    .ws:after{
-      content:"i";
+    .infoi{
       color:#fff;
       font-size:10px;
       background:gray;
@@ -184,13 +187,18 @@
       border-radius:50%;
       margin-left:6px;
     }
-    .ovl1{
-      display:none;
-      background:#fff;
-      z-index:20;
+    .infoi:hover + .ovl1{
+      display:block;
     }
-    .ws:hover + .ovl1{
-     display:block;
+    .ovl1{
+      position:absolute;
+      top:0;
+      left:0;
+      background:#fff;
+      height:50%;
+      width:100%;
+      display:none;
+      
     }
     .pct{
       top:-5px;
