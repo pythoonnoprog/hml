@@ -43,6 +43,7 @@ window.addEventListener("blur", blur, false);
 window.addEventListener("focus", focu, false);
 });
 var ms = screen.width;
+    var mms = window.innerWidth;
 function blur(){
   mlve();
 }
@@ -52,6 +53,12 @@ function focu(){
   }else{
     debugger;
   }
+
+}
+    window.onresize = window_load;
+function window_load() {
+	 if(mms== window.innerWidth)
+
 }
 function mlve(){
   var belement = document.createElement("blank");
@@ -63,7 +70,6 @@ function ment(){
 }
 window.document.onkeydown = function(event){
   if(event.key == "F12"){
-    message('ファンクションキーはご利用いただけません',"8686");
     return false;
   };
   if(event.ctrlKey && event.key === "r"){
@@ -78,22 +84,14 @@ window.document.onkeydown = function(event){
     if(event.key == "u"){
     return false;
   };
+      if(event.key == "s"){
+        mlve();
+    return false;
+  };
+  
 };
 document.oncontextmenu = function(){
- message('右クリックはご利用いただけません。',"8686");
  return false;
-}
-    var mid = 0;
-function message(msg,token){
- if(token=="8686" && msg.indexOf('>') != true){
-  mid++;
-  var melement = document.createElement("messages");
-  melement.innerHTML=msg;
-  document.body.appendChild(melement); 
-  setTimeout(function (){melement.remove()},3000);
- }else{
-  console.log("error");
- }
 }
     var title1 = document.querySelector("#mtitle");
     var lod = document.querySelector("#lod");
@@ -234,20 +232,6 @@ function message(msg,token){
     
   </script>
   <style>
-    messages{
-display:inline-block;
-text-align:center;
-padding:50px 10px 50px 10px;
-border-radius:10px;
-border:solid 2px lightblue;
-background-color:#fff;
-width:50vh;
-position: absolute;
-top: 50%;
-left: 50%;transform: translate(-50%, -50%);-webkit-transform: translate(-50%, -50%);
--ms-transform: translate(-50%, -50%);
-z-index:1000;
-}
     blank{
 display:block;
 position:absolute;
