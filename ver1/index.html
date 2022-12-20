@@ -1,0 +1,407 @@
+<html>
+  <head>
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta property="og:type" content="music.song" />
+    <meta
+      property="og:description"
+      content="各サービスでコンテンツを表示することが出来ます"
+    />
+    <meta property="og:title" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:locale" content="" />
+    <link rel="shortcut icon" href=" " id="fav" />
+    <script src="//accaii.com/gakkologin/script.js" async></script><noscript><img src="//accaii.com/gakkologin/script?guid=on"></noscript>
+  </head>
+  <body>
+    <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:#fff;z-index:100;" id="lod"></div>
+    <div id="maincontent">
+      <div id="cover">
+        <img src=" " alt="アルバム画像" id="acover" />  
+      </div>
+      <div id="titlebox">
+        <div id="mtitle"></div>
+      </div>
+      <div id="distribox"></div>
+      <span class="cpg" id="cpg"></span>
+      <span class="btm" id="btm">
+        <div style="text-align:center;">
+        <small style="color:gray;top:-5px;position:relative;">cookieとプライバシーは鍵マークから.</small><a href="https://telegra.ph/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BCNotice---hmlf5si-%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6-12-18" class="pcv"><img src="https://cdn.glitch.global/d57cd157-4c25-421e-9090-c85e3ba6bcab/%E3%82%AB%E3%82%AE%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3.png?v=1671363039602" class="pcvicon">
+           <div class="pct">
+           Privacy
+          </div></a>
+        </div>
+      </span>
+    </div>
+  </body>
+  <script>
+    window.addEventListener('load', function(){
+window.addEventListener("blur", blur, false);
+window.addEventListener("focus", focu, false);
+});
+var ms = screen.width;
+function blur(){
+  mlve();
+}
+function focu(){
+  if(ms==screen.width){
+    ment();
+  }else{
+    debugger;
+  }
+}
+function mlve(){
+  var belement = document.createElement("blank");
+  belement.id="bm";
+  document.body.appendChild(belement); 
+}
+function ment(){
+ document.getElementById("bm").remove();
+}
+window.document.onkeydown = function(event){
+  if(event.key == "F12"){
+    message('ファンクションキーはご利用いただけません',"8686");
+    return false;
+  };
+  if(event.ctrlKey && event.key === "r"){
+    return false;
+  };
+  if(event.key == "F5"){
+    return false;
+  };
+  if(event.key == "K"){
+    return false;
+  };
+    if(event.key == "u"){
+    return false;
+  };
+};
+document.oncontextmenu = function(){
+ message('右クリックはご利用いただけません。',"8686");
+ return false;
+}
+    var mid = 0;
+function message(msg,token){
+ if(token=="8686" && msg.indexOf('>') != true){
+  mid++;
+  var melement = document.createElement("messages");
+  melement.innerHTML=msg;
+  document.body.appendChild(melement); 
+  setTimeout(function (){melement.remove()},3000);
+ }else{
+  console.log("error");
+ }
+}
+    var title1 = document.querySelector("#mtitle");
+    var lod = document.querySelector("#lod");
+    var img1 = document.querySelector("#acover");
+    var cpg = document.querySelector("#cpg");
+    var ida = location.search.substr(2);
+    if (ida == "") {
+      location.href = "/g";
+    } else {
+    }
+    $.ajax({
+      type: "POST",
+      url: "https://script.google.com/macros/s/AKfycbzKO3RzIpPyGWdkPwJujDO-aF3AuH0q6NxRo_kqLVmRssRAgYNCvS28oWxtMlJ2NpNWLw/exec",
+      data: { p1: ida },
+    })
+      .done(function (data) {
+        var dd = JSON.parse(data);
+      
+      console.log(dd);
+        if (dd[1] == "MNAME(あいう)") {
+          location.href = "404";
+        } else {
+          var er = dd[2].substr(10,5);
+          var author1 = dd[5].substr(1);
+          var type1 = dd[5].substr(0,1);
+          console.log(er);
+          if(type1 == "c"){
+          cpg.innerHTML="&copy"+er+" "+author1;
+          }else{
+          cpg.innerHTML="&#8471"+er+" "+author1;
+          }
+          img1.src = dd[4];
+          title1.innerHTML = dd[1];
+          var title = dd[1];
+          var url = location.href;
+          var image = dd[4];
+          document.title = title;
+          var fav = document.getElementById("fav");
+          fav.href = dd[4];
+          if(dd[6] == "none"){}else{
+            var y2 = document.createElement("div");
+            y2.className="flxy";
+            document.getElementById("distribox").appendChild(y2);
+            var pb = document.createElement("div");
+            pb.innerHTML="表示";
+            pb.className="pbtn";
+            y2.appendChild(pb);
+            var spp = document.createElement("div");
+            spp.className="sservice";
+            y2.appendChild(spp);
+            pb.setAttribute("onclick","location.href='"+dd[6]+"';");
+            var exp = document.createElement("div");
+            spp.innerHTML="Webサイト";
+            spp.className="ws";
+            var infom2 = document.createElement("span");
+            infom2.innerHTML="i";
+            infom2.className="infoi";
+            spp.appendChild(infom2);
+            var infom1 = document.createElement("div");
+            infom1.innerHTML="このリンクは所有者が設定したものです。<br>";
+            infom1.className="ovl1";
+            spp.appendChild(infom1);
+          }
+          if(dd[7] == "none"){}else{
+            var y3 = document.createElement("div");
+            y3.className="flxy";
+            document.getElementById("distribox").appendChild(y3);
+            var pb = document.createElement("div");
+            pb.innerHTML="再生";
+            pb.className="pbtn";
+            y3.appendChild(pb);
+            var spp = document.createElement("div");
+            spp.className="sservice";
+            y3.appendChild(spp);
+            pb.setAttribute("onclick","location.href='"+dd[7]+"';");
+            var exp = document.createElement("img");
+            exp.src = "https://cdn.glitch.global/d57cd157-4c25-421e-9090-c85e3ba6bcab/yt_logo_rgb_light.png?v=1671233609138";
+            exp.className="sservicecover";
+            spp.appendChild(exp);
+          }
+            if(dd[8] == "none"){}else{
+            var y4 = document.createElement("div");
+            y4.className="flxy";
+            document.getElementById("distribox").appendChild(y4);
+            var pb = document.createElement("div");
+            pb.innerHTML="再生";
+            pb.className="pbtn";
+            y4.appendChild(pb);
+            var spp = document.createElement("div");
+            spp.className="sservice";
+            y4.appendChild(spp);
+            pb.setAttribute("onclick","location.href='https://haruharumusic.netlify.app/?/"+dd[8]+"';");
+            var exp = document.createElement("img");
+            exp.src = "https://cdn.glitch.global/d57cd157-4c25-421e-9090-c85e3ba6bcab/haruharumusic.png?v=1671239162169";
+            exp.className="sservicecoverh";
+            spp.appendChild(exp);
+          }
+          var headData = document.head.children;
+          for (var i = 0; i < headData.length; i++) {
+            var propertyVal = headData[i].getAttribute("property");
+            if (propertyVal !== null) {
+              if (propertyVal.indexOf("og:title") != -1) {
+                headData[i].setAttribute("content", title);
+              }
+              if (propertyVal.indexOf("og:url") != -1) {
+                headData[i].setAttribute("content", url);
+              }
+              if (propertyVal.indexOf("og:image") != -1) {
+                headData[i].setAttribute("content", image);
+              }
+            }
+          }
+        }
+      })
+      .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+        alert("読み込めませんでした", XMLHttpRequest, textStatus, errorThrown);
+      });
+    img1.crossOrigin = "";
+    var ctx = null;
+    img1.onload = function () {
+      lod.style.display="none";
+      var canvas = document.createElement("canvas");
+      ctx = canvas.getContext("2d");
+      ctx.drawImage(img1, 0, 0, img1.width, img1.height);
+      var rrgb = ctx.getImageData(80, 80, 1, 1).data;
+      var rgb =
+        "rgb(" +
+        parseInt(rrgb[0] - 0) +
+        "," +
+        parseInt(rrgb[1] - 0) +
+        "," +
+        parseInt(rrgb[2] - 20) +
+        ")";
+      document.body.style.backgroundColor = rgb;
+      console.log(rgb);
+    };
+    
+    
+  </script>
+  <style>
+    messages{
+display:inline-block;
+text-align:center;
+padding:50px 10px 50px 10px;
+border-radius:10px;
+border:solid 2px lightblue;
+background-color:#fff;
+width:50vh;
+position: absolute;
+top: 50%;
+left: 50%;transform: translate(-50%, -50%);-webkit-transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+z-index:1000;
+}
+    blank{
+display:block;
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:999;
+background:#fff;
+}
+    .pcvicon:hover + .pct{
+      left:0px;
+      visibility:visible;
+    }
+    .ws{
+      margin-left:12px;
+      margin-top:15px;
+      font-weight:bold;
+    }
+    .infoi{
+      color:#fff;
+      font-size:10px;
+      background:gray;
+      padding:1 7 1 7;
+      border-radius:50%;
+      margin-left:6px;
+    }
+    .infoi:hover + .ovl1{
+      display:inline-block;
+    }
+    .ovl1{
+      position:absolute;
+      z-index:100;
+      color:#fff;
+      font-size:10px;
+      background:#000;
+      border-radius:10px;
+      display:none;
+      padding:5px;
+      opacity:0.7;
+    }
+    .pct{
+      top:-5px;
+      position:relative;
+      left:-25px;
+      display:inline-block;
+      -moz-transition: 1s ease; 
+      -webkit-transition: 1s ease; 
+      transition: 0.8s ease;
+      visibility:hidden;
+      z-index:1;
+    }
+    .pcv{
+      display:inline-block;
+      text-decoration:none;
+    }
+    .pcv{
+      color:#66ff66;
+    }
+    .pcvicon{
+      position:relative;
+      display:inline-block;
+      z-index:1000;
+      width:20px;
+    }
+    body {
+      font-family: 'Meiryo';
+      width: 100%;
+      height: 100%;
+      background-color: slategrey;
+      margin: 0px;
+    }
+    #cover {
+      width: 100%;
+    }
+    #acover {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .btm{
+      display: block;
+      background-color: #e6bfab;
+      padding:4px;
+    }
+    .cpg {
+      display: block;
+      background-color: azure;
+      text-align: left;
+      padding:4px;
+      font-size:12px;
+    }
+    #titlebox {
+      padding: 20 20 20 20;
+      background-color: darksalmon;
+    }
+    #distribox {
+      background-color: aliceblue;
+    }
+    #maincontent {
+      margin-top: 10px;
+      width: 28%;
+      border-radius: 10px;
+      text-align: center;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    @media screen and (max-width: 800px) {
+      #maincontent {
+        width: 95%;
+      }
+      #acover {
+        border-radius: 5px;
+      }
+      .infoi{
+      padding:1 6 1 6;
+    }
+    }
+    .gp {
+      display: block;
+      height: 19px;
+      background: navajowhite;
+      color: #fff;
+      padding: 2px;
+      margin: 10px;
+      font-size: 10px;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: alias;
+    }
+    .flxy {
+      display: flex;
+      border-bottom: 1px solid navajowhite;
+    }
+    .pbtn {
+      background-color: #fff;
+      text-align: center;
+      padding: 15px 18px 15px 18px;
+      border-right: solid 2px;
+      border-image: conic-gradient(cyan, black) 1;
+      cursor: pointer;
+    }
+    .sservice {
+      text-align: center;
+      margin-left: 10px;
+    }
+    .sservicecover { 
+      width: 100px;
+      margin-top: 15px;
+    }
+    .sservicecoverh { 
+      width: 100px;
+      margin-top: 0px;
+    }
+  </style>
+</html>
