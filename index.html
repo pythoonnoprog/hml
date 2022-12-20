@@ -60,8 +60,15 @@
           location.href = "404";
         } else {
           var er = dd[2].substr(10,5);
+          var author1 = dd[5].substr(1);
+          var type1 = dd[5].substr(1,1);
+          alert(type1);
           console.log(er);
-          cpg.innerHTML="&#8471"+er+" "+dd[5];
+          if(type1 == "C"){
+          cpg.innerHTML="&copy"+er+" "+author1;
+          }else{
+          cpg.innerHTML="&#8471"+er+" "+author1;
+          }
           img1.src = dd[4];
           title1.innerHTML = dd[1];
           var title = dd[1];
