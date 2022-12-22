@@ -94,7 +94,7 @@ window.document.onkeydown = function(event){
   };
   
 };
-document.oncontextmenu = function(){
+document.body.oncontextmenu = function(){
  return false;
 }
     var title1 = document.querySelector("#mtitle");
@@ -124,8 +124,10 @@ document.oncontextmenu = function(){
           console.log(er);
           if(type1 == "c"){
           cpg.innerHTML="&copy"+er+" "+author1;
-          }else{
+          }else if(type1 == "p"){
           cpg.innerHTML="&#8471"+er+" "+author1;
+          }else{
+            cpg.style.display="none";
           }
           img1.src = dd[4];
           title1.innerHTML = dd[1];
