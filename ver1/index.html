@@ -110,6 +110,7 @@ document.body.oncontextmenu = function(){
       type: "POST",
       url: "https://script.google.com/macros/s/AKfycbzKO3RzIpPyGWdkPwJujDO-aF3AuH0q6NxRo_kqLVmRssRAgYNCvS28oWxtMlJ2NpNWLw/exec",
       data: { p1: ida },
+       async : false
     })
       .done(function (data) {
         var dd = JSON.parse(data);
