@@ -8,6 +8,7 @@
       <script src="//accaii.com/gakkologin/script.js" async></script><noscript><img src="//accaii.com/gakkologin/script?guid=on"></noscript>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+      <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
       <!--メタ情報　及び　外部スクリプト読み込み of 終わり-->
     </head>
     <body>
@@ -16,16 +17,28 @@
       <!--ページ内コンテンツ-->
       <div id="toppage" class="page">
        <h3>プロジェクトに対応したリンク</h3>
-       <label>URLの後ろのID(/?/ここ)を入力してください</label><br>
-       <input class="css-input" id="ssb" onchange="ssbf()">
+       <label style="display:block;margin-top:40px">URLの後ろのID(/?/ここ)を入力してください</label>
+       <input style="margin-top:5px" class="css-input" id="ssb" onchange="ssbf()"><br><p style="margin-top:10px">もしくはQRコードを読み込み</p>
+       <img style="margin-top:0px" src="https://cdn.glitch.global/d57cd157-4c25-421e-9090-c85e3ba6bcab/1031_q_h.png?v=1672318700218" onclick="sbsf()" class="ii">
       </div>
       <script>
        function ssbf(){
         location.href="https://hml.f5.si/?/"+document.getElementById("ssb").value;
        }
+       function sbsf(){
+        liff.scanCodeV2()
+  .then((result) => {
+    location.href="https://hml.f5.si/?/"+result.value;
+  })
+  .catch((error) => {
+    console.log("error", error);
+  });
+}
       </script>
       <style>
-        
+        .ii{
+          width:30px;
+        }
         .css-input {
           display:inline-block;
      padding: 5px;
