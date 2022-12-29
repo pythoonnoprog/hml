@@ -105,10 +105,10 @@ document.body.oncontextmenu = function(){
     if (ida == "") {
       location.href = "/g";
     } else {
-    }
+    
     $.ajax({
       type: "POST",
-      url: "https://script.google.com/macros/s/AKfycbzKO3RzIpPyGWdkPwJujDO-aF3AuH0q6NxRo_kqLVmRssRAgYNCvS28oWxtMlJ2NpNWLw/exec",
+      url: "https://script.google.com/macros/s/AKfycbyCAeXmOPCBwtgkvNcRWmAWI46X-UgLNyuD-nxog1f6xKv6NmVgsLm9oaFxuTBuLWL2RQ/exec",
       data: { p1: ida },
        async : false
     })
@@ -196,6 +196,23 @@ document.body.oncontextmenu = function(){
             exp.className="sservicecoverh";
             spp.appendChild(exp);
           }
+          if(dd[9] == "none"){}else{
+            var y5 = document.createElement("div");
+            y5.className="flxy";
+            document.getElementById("distribox").appendChild(y5);
+            var pb = document.createElement("div");
+            pb.innerHTML="追加";
+            pb.className="pbtn";
+            y5.appendChild(pb);
+            var spp = document.createElement("div");
+            spp.className="sservice";
+            y5.appendChild(spp);
+            pb.setAttribute("onclick","location.href='"+dd[9]+"';");
+            var exp = document.createElement("img");
+            exp.src = "https://cdn.glitch.global/d57cd157-4c25-421e-9090-c85e3ba6bcab/21_LOA_logo_JP_GR_01.png?v=1672283795815";
+            exp.className="sservicecoverl";
+            spp.appendChild(exp);
+          }
           var headData = document.head.children;
           for (var i = 0; i < headData.length; i++) {
             var propertyVal = headData[i].getAttribute("property");
@@ -216,6 +233,7 @@ document.body.oncontextmenu = function(){
       .fail(function (XMLHttpRequest, textStatus, errorThrown) {
         alert("読み込めませんでした", XMLHttpRequest, textStatus, errorThrown);
       });
+    }
     img1.crossOrigin = "";
     var ctx = null;
     img1.onload = function () {
@@ -393,6 +411,10 @@ background:#fff;
     .sservicecoverh { 
       width: 100px;
       margin-top: 0px;
+    }
+    .sservicecoverl { 
+      width: 150px;
+      margin-top: 17px;
     }
   </style>
 </html>
