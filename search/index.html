@@ -16,7 +16,7 @@
       <!--ページ内コンテンツ-->
       <div id="toppage" class="page">
        <h3>プロジェクトに対応したリンク</h3>
-       <label>URLの後ろのID(/?/ここ)を入力してください</label>
+       <label>URLの後ろのID(/?/ここ)を入力してください</label><br>
        <input class="css-input" id="ssb" onchange="ssbf()">
       </div>
       <script>
@@ -27,6 +27,7 @@
       <style>
         
         .css-input {
+          display:inline-block;
      padding: 5px;
      font-size: 16px;
      border-width: 3px;
@@ -52,18 +53,9 @@
         }
        #toppage{
         width:100%;
-        display:flex;
         height:calc(100% - 50px);
        }
-        #box1{
-          text-align:center;
-          width:50%;
-        }
-        #box2{
-          background-color: rgb(189, 186, 161);
-          text-align:center;
-          width:50%;
-        }
+
         .page{
           position:absolute;
           top:50px;
