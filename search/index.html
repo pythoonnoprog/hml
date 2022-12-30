@@ -22,6 +22,15 @@
        <img style="margin-top:0px" src="https://cdn.glitch.global/d57cd157-4c25-421e-9090-c85e3ba6bcab/1031_q_h.png?v=1672318700218" onclick="sbsf()" class="ii">
       </div>
       <script>
+        liff.init({
+    liffId: '1657779469-PWAVlzVB', 
+})
+    .then(() => {
+      console.log("liff Ready!");
+    })
+    .catch((err) => {
+        console.log(err);
+    });
        function ssbf(){
         location.href="https://hml.f5.si/?/"+document.getElementById("ssb").value;
        }
@@ -31,7 +40,7 @@
     location.href="https://hml.f5.si/?/"+result.value;
   })
   .catch((error) => {
-    alert("error", error);
+    alert("エラー", error);
   });
 }
       </script>
