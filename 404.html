@@ -17,7 +17,7 @@
     "App",
     "safe"
   ];
-  var path1 = location.pathname.split();
+  var path1 = location.pathname.split("/");
   if(safeurl.indexOf(path1[1])){
     console.log("セーフディレクトリ");
   }else{
