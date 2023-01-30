@@ -1,0 +1,38 @@
+
+<h1>このサイトはブロックされました</h1>
+<hr>
+<a href=""><div id="mydiv"></div></a>
+<p><div id="msg"></div></p>
+<small>安全が確認できませんでした</small><br>
+<button onclick="location.href=''">表示</button><br>
+<a href="https://example.com">お問い合わせ</a>  <a href="https://example.com">解除申請</a>
+<script>
+function getParam(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+document.getElementById('mydiv').innerHTML = getParam('connecturl');
+document.getElementById('msg').innerHTML = "ブロック理由:<b>"+getParam('blockmessage')+"</b>";
+
+</script>
+
+<style>
+.msg{
+display:inline;
+}
+body{
+text-align:center;
+ 
+}
+small{
+color:gray;
+}
+h1{
+margin-top:100;
+}
+</style>
