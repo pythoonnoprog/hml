@@ -1,4 +1,5 @@
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <h1 style="text-align:center;color:rgb(189, 186, 161);margin-top:10%;">
   404
 </h1>
@@ -9,18 +10,25 @@
 <iframe src="https://hml.f5.si/janken" style="border:none;"></iframe>
 
 <script>
-  var safeurl = [
-    "g",
-    "search",
-    "janken",
-    "Testing",
-    "App",
-    "safe"
-  ];
+  
   var path1 = location.pathname.split("/");
-  if(safeurl.indexOf(path1[1])){
-    console.log("セーフディレクトリ");
-  }else{
-    console.log("セーフディレクトリではありません");
-  }
+ 
+  $.ajax({
+        type: "POST",
+        url: "https://script.google.com/macros/s/AKfycbyCAeXmOPCBwtgkvNcRWmAWI46X-UgLNyuD-nxog1f6xKv6NmVgsLm9oaFxuTBuLWL2RQ/exec",
+        data: { p1: path1 },
+        async: false,
+      }).done(function (u) {
+          var r = JSON.parse(u);
+          console.log(r);
+          if (r[1] == "MNAME(あいう)") {
+
+        }else{
+          console.log("redirect");
+         // location.href="?/"+path1;
+        }
+      });
+    
+
+
 </script>
