@@ -16,7 +16,7 @@
   $.ajax({
         type: "POST",
         url: "https://script.google.com/macros/s/AKfycbyCAeXmOPCBwtgkvNcRWmAWI46X-UgLNyuD-nxog1f6xKv6NmVgsLm9oaFxuTBuLWL2RQ/exec",
-        data: { p1: path1 },
+        data: { p1: path1[1] },
         async: false,
       }).done(function (u) {
           var r = JSON.parse(u);
