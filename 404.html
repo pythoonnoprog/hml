@@ -16,8 +16,13 @@
           if (r[1] == "MNAME(あいう)") {
             document.write("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n<body style=\"background:#bdbaa1;\">\r\n<h1 style=\"text-align:center;color:#fff;margin-top:2em;\">\r\n  404\r\n<\/h1>\r\n<p style=\"margin-top:2em;\">\r\n  <span class=\"mptext1\">\u30ea\u30af\u30a8\u30b9\u30c8\u3055\u308c\u305f\u30da\u30fc\u30b8\u304c\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f\u3001<\/span><span class=\"mptext1\"><span class=\"mptext2\">URL<\/span>\u306b\u8aa4\u308a\u304c\u306a\u3044\u304b\u3054\u78ba\u8a8d\u304f\u3060\u3055\u3044\u3002<\/span>\r\n<\/p>\r\n<style>\r\n\r\n.mptext1{\r\ntransition: all 0.9s 0s ease;\r\n\r\n}\r\n.mptext2:hover{\r\ntransition: all 0.9s 0.4s ease;\r\nfont-size:20px;\r\n}\r\n.mptext1:hover{\r\ncolor:#fff;\r\n\r\n}\r\n<\/style>\r\n<iframe src=\"https:\/\/hml.f5.si\/janken\" style=\"border:none;background: #fff;border-radius: 10px;\"><\/iframe><br>\r\n<center>\r\n<details style=\"display:block;width:100%;position:absolute;bottom:20px;color:gray;left:0;font-weight:small;cursor:help;\">\r\n  <summary>&copy;2023 Public Relations Committee&Computer Club<\/summary>\u5fa1\u30a2\u30af\u30bb\u30b9\u3044\u305f\u3060\u304d\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\uff01\r\n<a href=\"https:\/\/hml.f5.si\/g\">\u3053\u306e\u30ea\u30f3\u30af\u96c6\u30b7\u30b9\u30c6\u30e0\u306b\u3064\u3044\u3066(\u30c8\u30c3\u30d7\u30da\u30fc\u30b8)<\/a>\r\n<\/details>\r\n<\/center>\r\n\r\n<\/body>");
         }else{
+          if(r[10] != "none"){
           console.log("redirect");
+          location.href="https://hml.f5.si/profile/?/@"+path1[1];
+          }else{
+            console.log("nomal redirect");
           location.href="https://hml.f5.si/?/"+path1[1];
+          }
         }
       });
     
