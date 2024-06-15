@@ -265,6 +265,23 @@
               p10.innerHTML ="Instagram";
               p10.className = "sservicecovertext2";
               k.appendChild(p10);
+            }if (r[12] == "none") {
+            } else {
+              var b = document.createElement("div");
+              b.className = "flxy";
+              document.getElementById("distribox").appendChild(b);
+              var a = document.createElement("div");
+              a.innerHTML = "再生";
+              a.className = "pbtn";
+              b.appendChild(a);
+              var k = document.createElement("div");
+              k.className = "sservice";
+              b.appendChild(k);
+              a.setAttribute("onclick", "location.href='" + r[12].substr(1) + "';");
+              var h = document.createElement("img");
+              h.src ="https://cdn.glitch.global/f4e12fbd-8638-43b5-a099-6058360238c8/54544-1717072268-sc-logo-horizontal-black-419178.svg?v=1718430052355";
+              h.className = "sservicecoverl";
+              k.appendChild(h);
             }
             
 
