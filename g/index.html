@@ -1,74 +1,110 @@
 
 <html>
-  <head>
-    <!--メタ情報　及び　外部スクリプト読み込み-->
-    <!--(c) 2022 はるはる-->
-    <meta charset="utf-8" />
-   <script src="//accaii.com/gakkologin/script.js" async></script><noscript><img src="//accaii.com/gakkologin/script?guid=on"></noscript>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
-    <script src="script.js"></script>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-    <!--メタ情報　及び　外部スクリプト読み込み of 終わり-->
-  </head>
-  <body>
+<head>
+  <!-- メタ情報および外部スクリプト読み込み -->
+  <meta charset="utf-8" />
+  <script src="https://access.haruharutv.jp/?hml_g"></script>
+  <!--
+  <script src="//accaii.com/gakkologin/script.js" async></script>
+  <noscript><img src="//accaii.com/gakkologin/script?guid=on"></noscript>
+  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+  <script src="script.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Poppins:wght@100..900&display=swap');
 
+    body, html {
+      font-family: "Poppins", "Noto Sans JP", sans-serif;
+      font-weight: 400;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      overflow:hidden;
+    }
+
+    topbar {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #0a85ff;
+      padding: 16px 30px;
+      width: 100%;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    topbar:after {
+      content: "リンクをまとめるもの";
+    }
+
+    #toppage {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: calc(100vh - 56px);
+      padding-top: 56px;
+    }
+
+    #box1, #box2 {
+      flex: 1;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #box1 {
+      background-color: #fff;
+      padding: 20px;
+    }
+
+    #box1 h1 {
+      font-size: 24px;
+      margin-bottom: 16px;
+      color: #333;
+    }
+
+    #box1 p {
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    #box1 small {
+      font-size: 12px;
+      color: #888;
+    }
+
+    #box2 {
+      background-color: rgb(189, 186, 161);
+      padding: 20px;
+    }
+
+    .p1 {
+      max-width: 100%;
+      width: 80%;
+      height: auto;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
   <topbar></topbar>
-    <!--ページ内コンテンツ-->
-    <div id="toppage" class="page">
-      <div id="box1">
-      <h1>
-        この機能はベータ版です
-      </h1>
-      <p>
-        各サービスや個人のSNS、ホームページのリンクを付けられます
-      </p>
+  <!-- ページ内コンテンツ -->
+  <div id="toppage" class="page">
+    <div id="box1">
+      <h1>この機能はベータ版です</h1>
+      <p>各サービスや個人のSNS、ホームページのリンクを付けられます</p>
       <small>リンクの作成には現在、条件があります。</small>
-      </div>
-      <div id="box2">
-     <img src="https://cdn.glitch.global/d57cd157-4c25-421e-9090-c85e3ba6bcab/present1.png?v=1671189126560" class="p1">
-      </div>
     </div>
-    <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');body,html{font-family: "Poppins", "Noto Sans JP", sans-serif;font-weight: 400;font-style: normal;margin: 0px;}
-      .p1{
-        margin-top:10%;
-        text-align:center;
-        width:40%;
-      }
-     #toppage{
-      width:100%;
-      display:flex;
-      height:calc(100% - 50px);
-     }
-      #box1{
-        text-align:center;
-        width:50%;
-      }
-      #box2{
-        background-color: rgb(189, 186, 161);
-        text-align:center;
-        width:50%;
-      }
-      .page{
-        position:absolute;
-        top:56px;
-        left:0px;
-      }
-      topbar:after{
-        content:"リンクをまとめるもの";
-      }
-      topbar {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: #0a85ff;
-        padding: 16px 0px 16px 30px;
-        width: calc(100% - 30px);
-        color: #fff;
-      }
-    </style>
-    <!--ページ内コンテンツ of 終わり-->
-  </body>
+    <div id="box2">
+      <img src="https://cdn.glitch.global/d57cd157-4c25-421e-9090-c85e3ba6bcab/present1.png?v=1671189126560" class="p1" alt="Present Image">
+    </div>
+  </div>
+</body>
 </html>
