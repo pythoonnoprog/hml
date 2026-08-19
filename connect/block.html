@@ -16,8 +16,8 @@ function getParam(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
-document.getElementById('mydiv').innerHTML = getParam('connecturl');
-document.getElementById('msg').innerHTML = "ブロック理由:<b>"+getParam('blockmessage')+"</b>";
+document.getElementById('mydiv').textContent = getParam('connecturl');
+document.getElementById('msg').textContent = "ブロック理由:<b>"+getParam('blockmessage')+"</b>";
 
 </script>
 
